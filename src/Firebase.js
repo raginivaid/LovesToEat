@@ -10,3 +10,5 @@ const config = {
   };
 
   export const firebaseApp = firebase.initializeApp(config);
+  export const database = firebase.database().ref('posts/');
+export const auth = firebase.auth();
