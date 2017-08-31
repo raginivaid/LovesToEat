@@ -1,10 +1,27 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import { getUser } from './Actions/UserActions';
-import { logout } from './Actions/UserActions';
+import { connect } from 'react-redux';
+import { Field, reduxForm, reset } from 'redux-form';
+
+import { getUser,logout } from './Actions/UserActions';
+
 
 class Viewprofile extends Component {
+	componentWillMount() {
+    
+    this.props.getUser();
+    if (this.props.user.loading === false && this.props.user.email === undefined) {
+      this.props.history.replace('/Login');
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.user.loading === false && nextProps.user.email === undefined) {
+      this.props.history.replace('/Login');
+    }
+  }
+
 	
     render(){
         return(
@@ -58,4 +75,13 @@ class Viewprofile extends Component {
 }
 
 
-export default Viewprofile;
+let form = reduxForm({
+  form: 'CreateAccount'
+})(Viewprofile);
+
+form = connect((state, ownProps) => ({
+    user: state.user
+  }), { getUser, logout }
+)(form);
+
+export default form;
