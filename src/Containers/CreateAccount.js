@@ -43,7 +43,7 @@ class CreateAccount extends Component {
       return;
     }
     this.props.createAccount(this.state.email, this.state.password).then(() => {
-      this.props.history.replace('/');
+      this.props.history.replace('/ViewProfile');
     }).catch(err => {
       this.setState({
         error: err.message

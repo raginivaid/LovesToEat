@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import { connect } from 'react-redux';
-import { Field, reduxForm, reset } from 'redux-form';
+import { reduxForm } from 'redux-form';
 
 import { getUser,logout } from './Actions/UserActions';
 
