@@ -1,23 +1,32 @@
 body {
-  margin: 0;
+ 
   padding: 0;
+  margin: 0 0 60px; /* bottom has to be the same as footer height */
   font-family: 'Roboto', sans-serif;
+}
+html {
+    position: relative;
+    min-height: 100%;
 }
 
 footer {
     /* just for demo */
-    background-color: black;
-    border-top: 1px solid #E7E7E7;
+    background-color: white;
+    /*border-top: 1px solid #E7E7E7;*/
     text-align:center;
     padding:20px;
    /* just for demo */ 
-  
+    color: green;
+    font-weight: bold;
+    font-size: 15px;
     position: absolute;
     left: 0;
     bottom: 0;
     height: 40px;
-    width: 100%;
-    
+    width: 80%;
+    margin-right: 15%;
+    margin-left: 10%;
+
 }
 
 

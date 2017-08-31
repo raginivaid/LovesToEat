@@ -77,7 +77,7 @@ ReactDOM.render(
               <Route path="/Viewprofile" component={Viewprofile} />
 
               
-
+               <footer></footer>
 
     </div>
     </Router>
